@@ -1,0 +1,9 @@
+---
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+
+console.log("allPosts", allPosts);
+---
+
+<h1>{allPosts[0]?.data.title}</h1>
