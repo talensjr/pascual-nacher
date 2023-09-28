@@ -1,0 +1,11 @@
+@supports (min-height: 100dvh) {
+  .min-h-\[100dvh\] {
+    min-height: 100dvh;
+  }
+}
+
+@supports not (min-height: 100dvh) {
+  .min-h-\[100dvh\] {
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
+const { post } = Astro.props;
+
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+
+  return blog.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { Content } = await post.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
+      <h1>post entry</h1>
+      <Content />
+    </div>
+  </body>
+</html>

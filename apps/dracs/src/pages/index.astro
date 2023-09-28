@@ -1,6 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
 import dracksLogo from "./_assets/dracs-logo.webp";
+import "~/styles/base.css";
+
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
 ---
 
 <html lang="en">
@@ -9,12 +15,33 @@ import dracksLogo from "./_assets/dracs-logo.webp";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <title>Astro</title>
   </head>
-  <body class="bg-primary text-secondary">
-    <header class="h-10 flex gap-4 items-center">
-      <Image src={dracksLogo} alt="" class="h-full w-auto" />
-      <div>Dracs</div>
-    </header>
+  <body>
+    <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
+      <header class="h-10 flex gap-4 items-center">
+        <Image src={dracksLogo} alt="" class="h-full w-auto" />
+        <div>Dracs</div>
+      </header>
+
+      <main class="flex-1">
+        <h1>Hello!</h1>
+        <ul>
+          {
+            allPosts.map((post) => {
+              return (
+                <li>
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </main>
+      <footer>
+        <h2>I am the footer</h2>
+      </footer>
+    </div>
   </body>
 </html>
