@@ -1,9 +1,8 @@
 ---
 title: Dossier benvinguda
 publishDate: 2023-09-08T10:15:00Z
+lang: ca
 ---
-
-Hola famílies!
 
 RECORDATORI!
 

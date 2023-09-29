@@ -1,6 +1,7 @@
 ---
 title: Benvinguts al curs 2023-24
 publishDate: 2023-09-05T13:26:00Z
+lang: ca
 ---
 
 ## Material
