@@ -4,9 +4,12 @@ import { ViewTransitions } from "astro:transitions";
 import dracsLogo from "../_assets/dracs-logo.webp";
 import "~/styles/base.css";
 import { getCollection } from "astro:content";
+import { languages } from "~/i18n/languages";
 
 export async function getStaticPaths() {
-  return [{ params: { lang: "es" } }, { params: { lang: "ca" } }];
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
 }
 
 const allPosts = await getCollection("blog");
@@ -42,7 +45,9 @@ const posts = allPosts
             posts.map((post) => {
               return (
                 <li>
-                  <a href={`blog/${post.slug}`}>{post.data.title}</a>
+                  <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
+                    {post.data.title}
+                  </a>
                 </li>
               );
             })
