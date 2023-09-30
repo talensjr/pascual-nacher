@@ -5,6 +5,7 @@ import dracsLogo from "../_assets/dracs-logo.webp";
 import "~/styles/base.css";
 import { getCollection } from "astro:content";
 import { languages } from "~/i18n/languages";
+import { useTranslations } from "~/i18n/utils";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -20,6 +21,8 @@ const posts = allPosts
     slug: post.slug.split("/").pop(),
   }))
   .filter((post) => post.data.lang === Astro.params.lang);
+
+const t = useTranslations(Astro.params.lang as keyof typeof languages);
 ---
 
 <html lang={Astro.params.lang}>
@@ -39,12 +42,21 @@ const posts = allPosts
       </header>
 
       <main class="flex-1">
-        <h1>Hello!</h1>
+        <h1>{t("home.title")}</h1>
         <ul>
           {
             posts.map((post) => {
               return (
                 <li>
+                  <span
+                    data-id="postPublishDate"
+                    data-value={post.data.publishDate}
+                    data-lang={Astro.params.lang}
+                  >
+                    {new Date(post.data.publishDate).toLocaleString(
+                      Astro.params.lang
+                    )}
+                  </span>
                   <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
                     {post.data.title}
                   </a>
@@ -58,5 +70,19 @@ const posts = allPosts
         <h2>I am the footer</h2>
       </footer>
     </div>
+
+    <script>
+      const postsDates = document.querySelectorAll("[data-id=postPublishDate]");
+      postsDates.forEach((date) => {
+        const dateValue = date.getAttribute("data-value");
+        const dateLang = date.getAttribute("data-lang");
+        const dateObj = new Date(dateValue);
+        date.textContent = dateObj.toLocaleString(dateLang, {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        });
+      });
+    </script>
   </body>
 </html>
