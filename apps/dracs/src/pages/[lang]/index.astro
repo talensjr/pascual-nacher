@@ -5,7 +5,8 @@ import dracsLogo from "../_assets/dracs-logo.webp";
 import "~/styles/base.css";
 import { getCollection } from "astro:content";
 import { languages } from "~/i18n/languages";
-import { useTranslations } from "~/i18n/utils";
+import { i18n } from "~/i18n/utils";
+import LanguagePicker from "~/components/LanguagePicker.astro";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -22,7 +23,7 @@ const posts = allPosts
   }))
   .filter((post) => post.data.lang === Astro.params.lang);
 
-const t = useTranslations(Astro.params.lang as keyof typeof languages);
+i18n.locale(Astro.params.lang);
 ---
 
 <html lang={Astro.params.lang}>
@@ -39,10 +40,11 @@ const t = useTranslations(Astro.params.lang as keyof typeof languages);
       <header class="h-10 flex gap-4 items-center">
         <Image src={dracsLogo} alt="" class="h-full w-auto" />
         <div>Dracs</div>
+        <LanguagePicker />
       </header>
 
       <main class="flex-1">
-        <h1>{t("home.title")}</h1>
+        <h1>{i18n.t("home.title")}</h1>
         <ul>
           {
             posts.map((post) => {
