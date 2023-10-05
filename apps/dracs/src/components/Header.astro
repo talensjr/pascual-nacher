@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import dracsLogo from "./_assets/dracs-logo.webp";
+import LanguagePicker from "~/components/LanguagePicker.astro";
+---
+
+<header class="h-10 flex gap-4 items-center">
+  <Image src={dracsLogo} alt="" class="h-full w-auto" />
+  <div>Dracs</div>
+  <LanguagePicker />
+</header>

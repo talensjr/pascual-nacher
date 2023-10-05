@@ -2,12 +2,29 @@
 import { languages } from "~/i18n/languages";
 ---
 
-<ul>
+<select id="language-selector">
   {
     Object.entries(languages).map(([lang, label]) => (
-      <li>
-        <a href={`/${lang}/`}>{label}</a>
-      </li>
+      <option value={lang} selected={lang === Astro.params.lang}>
+        <span>{label}</span>
+      </option>
     ))
   }
-</ul>
+</select>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+  document.addEventListener("astro:page-load", () => {
+    const languageSelector = document.getElementById("language-selector");
+    if (!languageSelector) throw new Error("language-selector not found");
+    console.log("languageSelector", languageSelector);
+
+    languageSelector.addEventListener("change", (e) => {
+      const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
+      const [_leadingSlash, _currentLang, ...rest] =
+        window.location.pathname.split("/");
+      const newPath = `/${selectedLanguage}/${rest.join("/")}`;
+      navigate(newPath);
+    });
+  });
+</script>

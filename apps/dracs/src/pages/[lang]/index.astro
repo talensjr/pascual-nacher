@@ -1,12 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
-import dracsLogo from "../_assets/dracs-logo.webp";
 import "~/styles/base.css";
 import { getCollection } from "astro:content";
 import { languages } from "~/i18n/languages";
 import { i18n } from "~/i18n/utils";
-import LanguagePicker from "~/components/LanguagePicker.astro";
+import Header from "~/components/Header.astro";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -37,11 +35,7 @@ i18n.locale(Astro.params.lang);
   </head>
   <body>
     <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
-      <header class="h-10 flex gap-4 items-center">
-        <Image src={dracsLogo} alt="" class="h-full w-auto" />
-        <div>Dracs</div>
-        <LanguagePicker />
-      </header>
+      <Header />
 
       <main class="flex-1">
         <h1>{i18n.t("home.title")}</h1>
@@ -85,6 +79,18 @@ i18n.locale(Astro.params.lang);
           day: "2-digit",
         });
       });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DGC2QQ40H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-1DGC2QQ40H");
     </script>
   </body>
 </html>

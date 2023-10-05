@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
+import Header from "~/components/Header.astro";
 const { page } = Astro.props;
 
 export async function getStaticPaths() {
@@ -28,9 +29,22 @@ const { Content } = await page.render();
     <title>Astro</title>
   </head>
   <body>
+    <Header />
     <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
       <h1>post entry</h1>
       <Content />
     </div>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DGC2QQ40H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-1DGC2QQ40H");
+    </script>
   </body>
 </html>
