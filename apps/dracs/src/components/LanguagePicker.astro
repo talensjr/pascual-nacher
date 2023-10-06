@@ -5,7 +5,7 @@ import "./language-picker.css";
 
 <select
   id="language-selector"
-  class="bg-[hsla(250deg_14%_95%_/_10%)] border pl-4 pr-8 py-1 border-[hsla(250deg_14%_95%_/_10%)] rounded appearance-none"
+  class="text-[hsla(250,_14%,_80%,_1)] bg-[hsla(250deg_14%_95%_/_10%)] border pl-4 pr-8 py-1 border-[hsla(250deg_14%_95%_/_10%)] rounded appearance-none hover:border-[hsla(250,_14%,_80%,_1)] hover:text-[hsla(250,_14%,_90%,_1)] transition-colors cursor-pointer"
 >
   {
     Object.entries(languages).map(([lang, label]) => (
@@ -21,7 +21,19 @@ import "./language-picker.css";
   document.addEventListener("astro:page-load", () => {
     const languageSelector = document.getElementById("language-selector");
     if (!languageSelector) throw new Error("language-selector not found");
-    console.log("languageSelector", languageSelector);
+
+    languageSelector.addEventListener("change", (e) => {
+      const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
+      const [_leadingSlash, _currentLang, ...rest] =
+        window.location.pathname.split("/");
+      const newPath = `/${selectedLanguage}/${rest.join("/")}`;
+      navigate(newPath);
+    });
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    const languageSelector = document.getElementById("language-selector");
+    if (!languageSelector) throw new Error("language-selector not found");
 
     languageSelector.addEventListener("change", (e) => {
       const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
