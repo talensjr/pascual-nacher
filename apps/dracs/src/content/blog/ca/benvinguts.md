@@ -11,5 +11,4 @@ Ja estem preparant tot per al inici de curs! El dilluns dia 11 ens tornem a veur
 Vos envie informació ⬆️ que ens ajudara a començar el curs i a tornar a la rutina!
 Fins dilluns🌞😊
 
-![benvinguts - material](/images/benvinguts.jpeg)
-[image](/images/benvinguts.jpeg)
+[![benvinguts - material](/images/benvinguts.jpeg)](/images/benvinguts.jpeg)

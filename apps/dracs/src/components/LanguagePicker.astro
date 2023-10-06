@@ -1,8 +1,12 @@
 ---
 import { languages } from "~/i18n/languages";
+import "./language-picker.css";
 ---
 
-<select id="language-selector">
+<select
+  id="language-selector"
+  class="bg-[hsla(250deg_14%_95%_/_10%)] border pl-4 pr-8 py-1 border-[hsla(250deg_14%_95%_/_10%)] rounded appearance-none"
+>
   {
     Object.entries(languages).map(([lang, label]) => (
       <option value={lang} selected={lang === Astro.params.lang}>

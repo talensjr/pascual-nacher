@@ -1,0 +1,35 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "~/components/Header.astro";
+import "~/styles/base.css";
+const { title } = Astro.props;
+---
+
+<html lang={Astro.params.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="bg-primary text-secondary">
+      <Header />
+    </header>
+    <slot />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DGC2QQ40H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-1DGC2QQ40H");
+    </script>
+  </body>
+</html>

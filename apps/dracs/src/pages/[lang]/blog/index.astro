@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Header from "~/components/Header.astro";
 import { languages } from "~/i18n/languages";
+import MainLayout from "~/layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -13,30 +13,9 @@ const allPosts = await getCollection("blog");
 console.log("allPosts", allPosts);
 ---
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>{allPosts[0]?.data.title}</h1>
-    </main>
-    <footer></footer>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DGC2QQ40H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-1DGC2QQ40H");
-    </script>
-  </body>
-</html>
+<MainLayout>
+  <main>
+    <h1>{allPosts[0]?.data.title}</h1>
+  </main>
+  <footer></footer>
+</MainLayout>

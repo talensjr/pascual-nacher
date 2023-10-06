@@ -1,10 +1,8 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import "~/styles/base.css";
 import { getCollection } from "astro:content";
 import { languages } from "~/i18n/languages";
 import { i18n } from "~/i18n/utils";
-import Header from "~/components/Header.astro";
+import MainLayout from "~/layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -24,73 +22,49 @@ const posts = allPosts
 i18n.locale(Astro.params.lang);
 ---
 
-<html lang={Astro.params.lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
-    <title>Astro</title>
-  </head>
-  <body>
-    <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
-      <Header />
+<MainLayout>
+  <div class="bg-primary text-secondary px-4 min-h-[100dvh] flex flex-col">
+    <main class="flex-1">
+      <h1>{i18n.t("home.title")}</h1>
+      <ul>
+        {
+          posts.map((post) => {
+            return (
+              <li>
+                <span
+                  data-id="postPublishDate"
+                  data-value={post.data.publishDate}
+                  data-lang={Astro.params.lang}
+                >
+                  {new Date(post.data.publishDate).toLocaleString(
+                    Astro.params.lang
+                  )}
+                </span>
+                <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
+                  {post.data.title}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </main>
+    <footer>
+      <h2>I am the footer</h2>
+    </footer>
+  </div>
 
-      <main class="flex-1">
-        <h1>{i18n.t("home.title")}</h1>
-        <ul>
-          {
-            posts.map((post) => {
-              return (
-                <li>
-                  <span
-                    data-id="postPublishDate"
-                    data-value={post.data.publishDate}
-                    data-lang={Astro.params.lang}
-                  >
-                    {new Date(post.data.publishDate).toLocaleString(
-                      Astro.params.lang
-                    )}
-                  </span>
-                  <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
-                    {post.data.title}
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </main>
-      <footer>
-        <h2>I am the footer</h2>
-      </footer>
-    </div>
-
-    <script>
-      const postsDates = document.querySelectorAll("[data-id=postPublishDate]");
-      postsDates.forEach((date) => {
-        const dateValue = date.getAttribute("data-value");
-        const dateLang = date.getAttribute("data-lang");
-        const dateObj = new Date(dateValue);
-        date.textContent = dateObj.toLocaleString(dateLang, {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        });
+  <script>
+    const postsDates = document.querySelectorAll("[data-id=postPublishDate]");
+    postsDates.forEach((date) => {
+      const dateValue = date.getAttribute("data-value");
+      const dateLang = date.getAttribute("data-lang");
+      const dateObj = new Date(dateValue);
+      date.textContent = dateObj.toLocaleString(dateLang, {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
       });
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DGC2QQ40H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-1DGC2QQ40H");
-    </script>
-  </body>
-</html>
+    });
+  </script>
+</MainLayout>
