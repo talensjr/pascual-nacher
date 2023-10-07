@@ -13,11 +13,17 @@ export async function getStaticPaths() {
 const allPosts = await getCollection("blog");
 
 const posts = allPosts
+  .filter((post) => post.data.lang === Astro.params.lang)
   .map((post) => ({
     ...post,
     slug: post.slug.split("/").pop(),
   }))
-  .filter((post) => post.data.lang === Astro.params.lang);
+  .sort((a, b) => {
+    return (
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+    );
+  });
 
 i18n.locale(Astro.params.lang);
 ---
@@ -25,24 +31,31 @@ i18n.locale(Astro.params.lang);
 <MainLayout>
   <div class="bg-primary text-secondary px-4 flex-1 flex flex-col">
     <main class="flex-1">
-      <h1>{i18n.t("home.title")}</h1>
-      <ul>
+      <!-- <h1>{i18n.t("home.title")}</h1> -->
+      <ul class="flex flex-col gap-6">
         {
           posts.map((post) => {
             return (
-              <li>
-                <span
-                  data-id="postPublishDate"
-                  data-value={post.data.publishDate}
-                  data-lang={Astro.params.lang}
-                >
-                  {new Date(post.data.publishDate).toLocaleString(
-                    Astro.params.lang
-                  )}
-                </span>
-                <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
-                  {post.data.title}
-                </a>
+              <li class="flex items-center">
+                <div class="flex flex-col">
+                  <span class="text-3xl">
+                    {new Date(post.data.publishDate).toLocaleDateString(
+                      Astro.params.lang,
+                      { day: "2-digit" }
+                    )}
+                  </span>
+                  <span class="text-base">
+                    {new Date(post.data.publishDate).toLocaleDateString(
+                      Astro.params.lang,
+                      { month: "long" }
+                    )}
+                  </span>
+                </div>
+                <div class="ml-6">
+                  <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
+                    {post.data.title}
+                  </a>
+                </div>
               </li>
             );
           })
@@ -53,18 +66,4 @@ i18n.locale(Astro.params.lang);
       <h2>I am the footer</h2>
     </footer>
   </div>
-
-  <script>
-    const postsDates = document.querySelectorAll("[data-id=postPublishDate]");
-    postsDates.forEach((date) => {
-      const dateValue = date.getAttribute("data-value");
-      const dateLang = date.getAttribute("data-lang");
-      const dateObj = new Date(dateValue);
-      date.textContent = dateObj.toLocaleString(dateLang, {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      });
-    });
-  </script>
 </MainLayout>

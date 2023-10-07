@@ -18,7 +18,8 @@ import "./language-picker.css";
 
 <script>
   import { navigate } from "astro:transitions/client";
-  document.addEventListener("astro:page-load", () => {
+
+  function changeLanguage() {
     const languageSelector = document.getElementById("language-selector");
     if (!languageSelector) throw new Error("language-selector not found");
 
@@ -29,18 +30,13 @@ import "./language-picker.css";
       const newPath = `/${selectedLanguage}/${rest.join("/")}`;
       navigate(newPath);
     });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    changeLanguage();
   });
 
   document.addEventListener("astro:after-swap", () => {
-    const languageSelector = document.getElementById("language-selector");
-    if (!languageSelector) throw new Error("language-selector not found");
-
-    languageSelector.addEventListener("change", (e) => {
-      const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
-      const [_leadingSlash, _currentLang, ...rest] =
-        window.location.pathname.split("/");
-      const newPath = `/${selectedLanguage}/${rest.join("/")}`;
-      navigate(newPath);
-    });
+    changeLanguage();
   });
 </script>
