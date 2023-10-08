@@ -36,26 +36,34 @@ i18n.locale(Astro.params.lang);
         {
           posts.map((post) => {
             return (
-              <li class="flex items-center">
-                <div class="flex flex-col">
-                  <span class="text-3xl">
+              <li class="flex">
+                <div class="flex flex-col items-center">
+                  <span class="text-[3.75rem] leading-none">
                     {new Date(post.data.publishDate).toLocaleDateString(
                       Astro.params.lang,
                       { day: "2-digit" }
                     )}
                   </span>
-                  <span class="text-base">
-                    {new Date(post.data.publishDate).toLocaleDateString(
-                      Astro.params.lang,
-                      { month: "long" }
-                    )}
-                  </span>
+                  <div class="text-[hsla(250,_14%,_80%,_1)] leading-none">
+                    <span class="text-base capitalize leading-none">
+                      {new Date(post.data.publishDate).toLocaleDateString(
+                        Astro.params.lang,
+                        { month: "short" }
+                      )}
+                    </span>
+                    <span class="text-base capitalize ml-2 leading-none">
+                      {new Date(post.data.publishDate).toLocaleDateString(
+                        Astro.params.lang,
+                        { year: "numeric" }
+                      )}
+                    </span>
+                  </div>
                 </div>
-                <div class="ml-6">
+                <h3 class="ml-6 text-2xl text-[hsl(76deg_63%_49%)]">
                   <a href={`/${Astro.params.lang}/blog/${post.slug}`}>
                     {post.data.title}
                   </a>
-                </div>
+                </h3>
               </li>
             );
           })
@@ -63,7 +71,7 @@ i18n.locale(Astro.params.lang);
       </ul>
     </main>
     <footer>
-      <h2>I am the footer</h2>
+      <!-- <h2>I am the footer</h2> -->
     </footer>
   </div>
 </MainLayout>

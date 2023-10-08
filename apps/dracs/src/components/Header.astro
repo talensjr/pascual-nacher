@@ -4,8 +4,16 @@ import dracsLogo from "./_assets/dracs-logo.webp";
 import LanguagePicker from "~/components/LanguagePicker.astro";
 ---
 
-<header class="h-10 flex gap-4 items-center fixed top-0 left-0 w-full z-10">
-  <Image src={dracsLogo} alt="" class="h-full w-auto" />
-  <div>Dracs</div>
+<header
+  class="h-14 flex items-center justify-between fixed top-0 w-11/12 max-w-5xl mx-auto z-10 bg-primary text-secondary p-2"
+>
+  <div class="flex gap-4 items-center h-full">
+    <a href="/" class="h-full">
+      <Image src={dracsLogo} alt="" class="h-full w-auto" />
+    </a>
+    <a href="/">
+      <div>Dracs</div>
+    </a>
+  </div>
   <LanguagePicker />
 </header>
