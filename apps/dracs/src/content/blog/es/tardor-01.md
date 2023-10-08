@@ -12,4 +12,4 @@ PD: los que no se quedan al comedor no les he dado la cartulina🤦🏽‍♀, o
 
 Lo podéis traer cuando lo tengáis preparado, sin prisas, para la semana del 16!
 
-[![tardor-c](/images/tardor-c.jpeg)](/images/tardor-c)
+[![tardor-c](/images/tardor-c.jpeg)](/images/tardor-c.jpeg)

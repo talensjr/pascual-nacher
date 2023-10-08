@@ -12,4 +12,4 @@ PD: a els que no es queden al menjador no els he donat la cartolina🤦🏽‍�
 
 Ho podeu portar quan ho tingau preparat, sense presa, per a la setmana del 16!
 
-[![tardor-v](/images/tardor-v.jpeg)](/images/tardor-v)
+[![tardor-v](/images/tardor-v.jpeg)](/images/tardor-v.jpeg)
