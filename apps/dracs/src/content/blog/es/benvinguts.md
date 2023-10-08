@@ -14,4 +14,4 @@ Os envío información ⬆️ que nos ayudará a empezar el curso y a volver a l
 
 Hasta el lunes🌞😊
 
-[![benvinguts - material](/images/benvinguts.jpeg)](/images/benvinguts.jpeg)
+[![benvinguts - material](/images/benvinguts-c.jpeg)](/images/benvinguts-c.jpeg)
