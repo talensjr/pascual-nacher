@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 const { Content } = await page.render();
 ---
 
-<MainLayout>
+<MainLayout title={`Dracs - ${Astro.props.page.data.title}`}>
   <h1
     class="text-3xl text-[hsl(76deg_63%_49%)]"
     transition:name={`title-${Astro.props.page.slug.split("/").pop()}`}
