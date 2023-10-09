@@ -25,10 +25,7 @@ const { Content } = await page.render();
   >
     {Astro.props.page.data.title}
   </h1>
-  <div
-    class="mb-4 italic"
-    transition:name={`date-${Astro.props.page.slug.split("/").pop()}`}
-  >
+  <div class="mb-4 italic">
     {
       new Date(Astro.props.page.data.publishDate).toLocaleDateString(
         Astro.params.lang,
