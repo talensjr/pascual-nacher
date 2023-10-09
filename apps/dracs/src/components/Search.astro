@@ -1,0 +1,14 @@
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />
+<style is:global>
+  :root {
+    --pagefind-ui-text: #fff;
+  }
+</style>
+
+<div id="search"></div>
+<script is:inline>
+window.addEventListener("DOMContentLoaded", async (event) => {
+    await import("/pagefind/pagefind-ui.js");
+    new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>

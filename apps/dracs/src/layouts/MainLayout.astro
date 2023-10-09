@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Header from "~/components/Header.astro";
+import Search from "~/components/Search.astro";
 import "~/styles/base.css";
 const { title } = Astro.props;
 ---
@@ -13,13 +14,19 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body
     class="min-h-[100dvh] flex flex-col bg-primary w-11/12 max-w-5xl mx-auto"
   >
-    <Header />
+    <Header>
+      <slot name="head" slot="head" />
+    </Header>
     <div class="bg-primary text-secondary px-4 flex-1 flex flex-col">
       <div class="h-20"></div>
+      <Search>
+        <slot name="head" slot="head" />
+      </Search>
       <slot />
     </div>
     <!-- Google tag (gtag.js) -->

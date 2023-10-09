@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "pagefind": "pagefind --site dist",
+    "build:pagefind": "pnpm build && pnpm pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -25,5 +27,8 @@
   "volta": {
     "node": "18.18.0",
     "pnpm": "8.8.0"
+  },
+  "devDependencies": {
+    "pagefind": "^1.0.3"
   }
 }
