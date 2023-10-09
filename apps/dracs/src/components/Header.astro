@@ -8,10 +8,10 @@ import LanguagePicker from "~/components/LanguagePicker.astro";
   class="h-14 flex items-center justify-between fixed top-0 w-11/12 max-w-5xl mx-auto z-10 bg-primary text-secondary p-2"
 >
   <div class="flex gap-4 items-center h-full">
-    <a href="/" class="h-full">
+    <a href={`/${Astro.params.lang}`} class="h-full">
       <Image src={dracsLogo} alt="" class="h-full w-auto" />
     </a>
-    <a href="/">
+    <a href={`/${Astro.params.lang}`}>
       <div>Dracs</div>
     </a>
   </div>
