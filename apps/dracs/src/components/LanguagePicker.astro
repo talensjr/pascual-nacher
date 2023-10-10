@@ -17,19 +17,19 @@ import "./language-picker.css";
 </select>
 
 <script>
-  import { navigate } from "astro:transitions/client";
+  function onLanguageChange(e: Event) {
+    const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
+    const [_leadingSlash, _currentLang, ...rest] =
+      window.location.pathname.split("/");
+    const newPath = `/${selectedLanguage}/${rest.join("/")}`;
+    window.location.pathname = newPath;
+  }
 
   function changeLanguage() {
     const languageSelector = document.getElementById("language-selector");
     if (!languageSelector) throw new Error("language-selector not found");
-
-    languageSelector.addEventListener("change", (e) => {
-      const selectedLanguage = (e.currentTarget as HTMLSelectElement).value;
-      const [_leadingSlash, _currentLang, ...rest] =
-        window.location.pathname.split("/");
-      const newPath = `/${selectedLanguage}/${rest.join("/")}`;
-      navigate(newPath);
-    });
+    languageSelector.removeEventListener("change", onLanguageChange);
+    languageSelector.addEventListener("change", onLanguageChange);
   }
 
   document.addEventListener("astro:page-load", () => {
