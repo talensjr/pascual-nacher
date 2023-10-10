@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "pagefind": "pagefind --site dist",
+    "pagefind": "pagefind --site dist --glob '*/blog/**/*/*.html'",
     "build:pagefind": "pnpm build && pnpm pagefind",
     "preview": "astro preview",
     "astro": "astro"

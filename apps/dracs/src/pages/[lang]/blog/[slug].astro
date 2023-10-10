@@ -19,23 +19,31 @@ const { Content } = await page.render();
 ---
 
 <MainLayout title={`Dracs - ${Astro.props.page.data.title}`}>
-  <h1
-    class="text-3xl text-[hsl(76deg_63%_49%)]"
-    transition:name={`title-${Astro.props.page.slug.split("/").pop()}`}
-  >
-    {Astro.props.page.data.title}
-  </h1>
-  <div class="mb-4 italic">
-    {
-      new Date(Astro.props.page.data.publishDate).toLocaleDateString(
-        Astro.params.lang,
-        {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        }
-      )
-    }
-  </div>
-  <Content />
+  <main data-pagefind-body>
+    <h1
+      class="text-3xl text-[hsl(76deg_63%_49%)]"
+      transition:name={`title-${Astro.props.page.slug.split("/").pop()}`}
+    >
+      {Astro.props.page.data.title}
+    </h1>
+    <div
+      class="mb-4 italic"
+      data-pagefind-meta="publishDate"
+      data-pagefind-sort={`date:${new Date(
+        Astro.props.page.data.publishDate
+      ).getTime()}`}
+    >
+      {
+        new Date(Astro.props.page.data.publishDate).toLocaleDateString(
+          Astro.params.lang,
+          {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          }
+        )
+      }
+    </div>
+    <Content />
+  </main>
 </MainLayout>

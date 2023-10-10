@@ -1,14 +1,71 @@
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />
-<style is:global>
-  :root {
-    --pagefind-ui-text: #fff;
-  }
-</style>
+---
+import { i18n } from "~/i18n/utils";
 
-<div id="search"></div>
+i18n.locale(Astro.params.lang);
+---
+
+<input
+  type="text"
+  id="search"
+  class="h-10 w-full bg-slate-600 mb-2 rounded px-2"
+  autocomplete="off"
+  placeholder={i18n.t("search.placeholder")}
+/>
+<div id="search-results"></div>
+
 <script is:inline>
-window.addEventListener("DOMContentLoaded", async (event) => {
-    await import("/pagefind/pagefind-ui.js");
-    new PagefindUI({ element: "#search", showSubResults: true });
+let pagefind;
+
+document.addEventListener("astro:page-load", async () => {
+    pagefind = await import("/pagefind/pagefind.js");
+
+    await pagefind.options({
+        bundlePath: "/custom-pagefind-directory/",
+    });
+
+    pagefind.init();
+    searchListener();
 });
+
+document.addEventListener("astro:after-swap", async () => {
+    searchListener();
+});
+
+async function onSearchInput(e) {
+    const searchInput = e.currentTarget;
+    console.log("event", e.key);
+    if (e.key === "Escape") {
+        searchInput.value = "";
+        console.log("escaped", searchInput.value);
+    }
+    const search = await pagefind.search(searchInput.value, {
+        sort: { date: "desc" },
+    });
+
+    const fiveResults = await Promise.all(
+        search.results.slice(0, 5).map((r) => r.data())
+    );
+
+    const results = document.getElementById("search-results");
+    results.innerHTML = "";
+    fiveResults.forEach((r) => {
+        const result = document.createElement("div");
+        result.innerHTML = `
+        <a href="${r.url}" class="font-bold">
+            <div class="flex flex-col my-2 bg-slate-700 p-2 rounded hover:bg-slate-600">
+                <span class="text-xl text-[hsl(76deg_63%_49%)]">${r.meta.title}</span>
+                <span class="italic">${r.meta.publishDate}</span>
+                <p class="text-sm">${r.excerpt}</p>
+            </div>
+        </a>
+        `;
+        results.appendChild(result);
+    });
+}
+
+function searchListener() {
+    const searchInput = document.getElementById("search");
+    searchInput.removeEventListener("keyup", onSearchInput);
+    searchInput.addEventListener("keyup", onSearchInput);
+}
 </script>

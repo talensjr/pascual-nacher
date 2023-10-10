@@ -13,10 +13,16 @@ export const i18n = rosetta({
     home: {
       title: "Bon dia desde rosetta",
     },
+    search: {
+      placeholder: "Busca per títol o text",
+    },
   },
   es: {
     home: {
       title: "Hola desde rosetta",
+    },
+    search: {
+      placeholder: "Busca por título o texto",
     },
   },
 });
