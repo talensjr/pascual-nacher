@@ -16,4 +16,4 @@ Además, podéis hacer en familia, un almuerzo terrorífico y traerlo al colegio
 
 Muchas gracias!
 
-[![halloween](/images/halloween-01.md)](/images/halloween-01.md)
+[![halloween](/images/halloween-01.webp)](/images/halloween-01.webp)

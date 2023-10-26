@@ -15,4 +15,4 @@ A més a més, podeu fer en família un esmorzar terrorífic i portar-lo a l'esc
 
 Moltes gràcies!
 
-[![halloween](/images/halloween-01.md)](/images/halloween-01.md)
+[![halloween](/images/halloween-01.webp)](/images/halloween-01.webp)
