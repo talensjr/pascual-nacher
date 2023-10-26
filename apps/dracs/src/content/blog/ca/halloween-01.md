@@ -4,16 +4,15 @@ publishDate: 2023-10-26T06:55:00Z
 lang: ca
 ---
 
-Hola familias!!
+Hola famílies!!
 
-Os informamos que el _martes 31de octubre_ haremos en la clase una fiestecita de Halloween🧛‍♂️🦇🎃☠️👻.
+Vos informem que el _dimarts 31d'octubre_ farem a la classe una miqueta de festeta de Halloween🧛‍♂️🦇🎃☠️👻.
 
-Por eso, este día vuestros hijos e hijas, pueden llevar puesto de casa un complemento (diadema, sombrero, la cara pintada, ...)
+Per això, aquest dia, els vostres fills i filles, poden portar posat de casa un complement (diadema, barret, la cara pintada, ...)
+NO PORTAR ELEMENTS VIOLENTS COM GANIVETS, PISTOLES O ESPASES.🧙‍♀️🧙🏾‍♂️🎃🧛‍♂️🧛🏻‍♀️🧟‍♀️🧟‍♂️
 
-NO TRAER ELEMENTOS VIOLENTOS COMO CUCHILLOS, PISTOLAS O ESPADAS.🧙‍♀️🧙🏾‍♂️🎃🧛‍♂️🧛🏻‍♀️🧟‍♀️🧟‍♂️
+A més a més, podeu fer en família un esmorzar terrorífic i portar-lo a l'escola per degustar-lo...🧑🏼‍🍳👨🏽‍🍳😋😋
 
-Además, podéis hacer en familia, un almuerzo terrorífico y traerlo al colegio para degustarlo...🧑🏼‍🍳👨🏽‍🍳😋😋
-
-Muchas gracias!
+Moltes gràcies!
 
 [![halloween](/images/halloween-01.webp)](/images/halloween-01.webp)
