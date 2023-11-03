@@ -1,7 +1,7 @@
 ---
 title: Libreta marrón del verano
 publishDate: 2023-11-03T12:18:00Z
-lang: ca
+lang: es
 ---
 
 📓 La libreta marrón 🟤 es para vosotros.
