@@ -9,3 +9,5 @@ lang: ca
 Bon cap de setmana!😄
 
 PD: a partir del dilluns podeu portar, si voleu, un babero per fer les activitats d'art!😉
+
+(Fotos en telegram)

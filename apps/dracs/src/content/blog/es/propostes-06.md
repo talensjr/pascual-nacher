@@ -9,3 +9,5 @@ lang: es
 Buen fin de semana!😄
 
 PD: a partir del lunes podéis traer, si queréis, un babero para hacer las actividades de arte!😉
+
+(Fotos en telegram)
