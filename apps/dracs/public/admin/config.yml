@@ -1,17 +1,17 @@
 backend:
-  name: test-repo
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 i18n:
   structure: multiple_folders
   locales: [es, ca]
   default_locale: ca
-media_folder: "public/images"
-public_folder: "images"
+media_folder: "apps/dracs/public/images"
+public_folder: "apps/dracs/public/images"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     i18n: true
-    folder: "src/pages/blog" # The path to the folder where the documents are stored
+    folder: "apps/dracs/src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
       # - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
