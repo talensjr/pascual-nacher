@@ -1,5 +1,5 @@
 ---
-title: Propostes
+title: Propuestas
 publishDate: 2023-11-03T13:30:00Z
 lang: es
 ---
