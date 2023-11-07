@@ -53,10 +53,13 @@ const { title } = Astro.props;
     </script>
 
     <script>
+      console.log("netlifyIndentity", window.netlifyIdentity);
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user: any) => {
+          console.log("init", user);
           if (!user) {
             window.netlifyIdentity.on("login", () => {
+              console.log("login");
               document.location.href = "/admin/";
             });
           }
