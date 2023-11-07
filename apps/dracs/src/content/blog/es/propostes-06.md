@@ -1,6 +1,6 @@
 ---
 title: Propostes
-publishDate: 2023-11-03T12:30:00Z
+publishDate: 2023-11-03T13:30:00Z
 lang: es
 ---
 
