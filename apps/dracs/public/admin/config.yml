@@ -31,4 +31,4 @@ collections:
           options: ["es", "ca"],
           i18n: true,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", i18n: true }
