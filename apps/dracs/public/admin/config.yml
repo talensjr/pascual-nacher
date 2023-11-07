@@ -29,5 +29,6 @@ collections:
           name: "lang",
           widget: "select",
           options: ["es", "ca"],
+          i18n: true,
         }
       - { label: "Body", name: "body", widget: "markdown" }
