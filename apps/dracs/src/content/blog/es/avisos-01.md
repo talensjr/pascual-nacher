@@ -1,6 +1,6 @@
 ---
 title: Avisos - autorización cambio de ropa
-publishDate: 2023-10-25T12:03:00Z
+publishDate: 2023-10-25T12:03:00.000Z
 lang: es
 ---
 
