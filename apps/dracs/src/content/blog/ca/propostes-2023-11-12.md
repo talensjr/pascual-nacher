@@ -1,6 +1,6 @@
 ---
 title: Propostes
-publishDate: 2023-11-12T10:42:07.030Z
+publishDate: 2023-11-10T13:15:02.797Z
 lang: ca
 ---
 Hola families!! 
