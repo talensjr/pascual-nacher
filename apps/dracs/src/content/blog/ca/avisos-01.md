@@ -1,7 +1,7 @@
 ---
 title: Avisos - autorització canvi de roba
 publishDate: 2023-10-25T12:03:00.000Z
-lang: es
+lang: ca
 ---
 ⚠️Hui ixen tots amb aquest paper.
 
