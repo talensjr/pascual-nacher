@@ -1,7 +1,7 @@
 ---
 title: Jugamos a un cuento
 publishDate: 2023-11-14T06:48:36.771Z
-lang: ca
+lang: es
 ---
 📚 📚📚📚
 
