@@ -23,4 +23,4 @@ A l'escola, estem preparant uns tallers per celebrar aquesta festivitat i per a 
 
 MOLTES GRÀCIES!
 
-[![santa caterina mocador](apps/dracs/public/images/santa_caterina.jpeg)](https://pn-dracs.netlify.app/images/santa_caterina.jpeg)
+[![santa caterina mocador](images/santa_caterina.jpeg)](https://pn-dracs.netlify.app/images/santa_caterina.jpeg)
