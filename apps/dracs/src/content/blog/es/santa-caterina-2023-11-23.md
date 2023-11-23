@@ -23,4 +23,4 @@ MUCHAS GRACIAS!
 
 
 
-[![santa catalina pañuelo](images/santa_caterina.jpeg)](https://pn-dracs.netlify.app/images/santa_caterina.jpeg)
+[![santa catalina pañuelo](/images/santa_caterina.jpeg)](https://pn-dracs.netlify.app/images/santa_caterina.jpeg)
