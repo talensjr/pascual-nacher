@@ -22,3 +22,5 @@ Hola familias! Esta semana en la entrada relajada, las propuestas que hemos hech
 Que propuestas nos esperan!!
 
 A trabajar!☺️
+
+(Fotos en telegram)

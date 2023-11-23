@@ -22,3 +22,5 @@ Hola famílies! Aquesta setmana a l’entrada relaxada, les propostes que hem fe
 Quines propostes ens esperen!!
 
 A treballar!☺️
+
+(Fotos en telegram)
