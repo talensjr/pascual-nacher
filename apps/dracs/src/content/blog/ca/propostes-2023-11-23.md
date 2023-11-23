@@ -19,6 +19,8 @@ Hola famílies! Aquesta setmana a l’entrada relaxada, les propostes que hem fe
 
 📍🟤 Psicomotricitat fina//Grafomotricitat: en aquesta proposta els infants han de reconéixer la seua inicial i després tirar el dau per tal de dibuixar diferents grafismes creatius 🎲🖍️
 
+A més aquesta setmana també hem fet taller d'art 🎨, on hem pintat de manera lliure amb els colors i les seues tonalitats. Hem mesclat pintura amb blanc i negre per veure que passava... també hem mesclat uns colors amb altres i açí teniu el resultat! 😊
+
 Quines propostes ens esperen!!
 
 A treballar!☺️

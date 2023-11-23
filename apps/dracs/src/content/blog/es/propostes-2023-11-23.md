@@ -19,6 +19,8 @@ Hola familias! Esta semana en la entrada relajada, las propuestas que hemos hech
 
 📍🟤 Psicomotricidad fina//Grafomotricidad: en esta propuesta los niños/as tienen que reconocer su inicial y después tirar el dado para dibuijar diferentes grafismos creativos 🎲🖍️
 
+Además esta semana también hemos hecho taller de arte 🎨, donde hemos pintado de manera libre con los colores y sus tonalidades. Hemos mezclado pintura con blanco y negro para ver que pasaba... también hemos mezclado unos colores con otros y aquí tenéis el resultado! 😊
+
 Que propuestas nos esperan!!
 
 A trabajar!☺️
