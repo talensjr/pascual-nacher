@@ -11,4 +11,4 @@ Els vostres fills i filles estan molt motivats!!
 
 Si teniu algun dubte, pregunteume!!!😊
 
-\[drac viatja](/images/drac_viatja.pdf)
+[drac viatja](/images/drac_viatja.pdf)

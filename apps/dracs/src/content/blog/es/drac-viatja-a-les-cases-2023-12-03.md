@@ -11,4 +11,4 @@ Vuestros hijos/as están muy motivados!!
 
 Si tenéis algúna duda, preguntadme!!!😊
 
-\[drac viaja](/images/drac_viaja.pdf)
+[drac viaja](/images/drac_viaja.pdf)
