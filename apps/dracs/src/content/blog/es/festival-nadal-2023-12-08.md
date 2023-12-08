@@ -12,3 +12,5 @@ Estamos preparando el festival de Navidad 🎄, que será el lunes 18. Para ello
 [![festival nadal](/images/festival_nadal.jpeg)](/images/festival_nadal.jpeg)
 
 Nosotros somos 4 años B!!
+
+[![informacion festival navidad](/images/info_festival_navidad.jpeg)](/images/info_festival_navidad.jpeg)

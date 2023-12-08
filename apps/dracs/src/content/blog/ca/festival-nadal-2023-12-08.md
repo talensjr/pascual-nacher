@@ -12,3 +12,5 @@ Estem preparant el festival de Nadal 🎄, que serà el dilluns 18. Hem pensat c
 [![festival nadal](/images/festival_nadal.jpeg)](/images/festival_nadal.jpeg)
 
 Nosaltres som 4 anys B!!
+
+[![iformacio festival nadal](/images/info_festival_nadal.jpeg)](/images/info_festival_nadal.jpeg)
