@@ -6,3 +6,5 @@ lang: es
 Buenos dias familias!!☺️Ya queda nada para las vacaciones y nosotros ya estamos preparando la vuelta😅. Para eso, os pedimos colaboración! 
 
 Vamos a montar un rinconcito de tienda en clase y necesitamos cajitas de madera como la que os envío en la foto. Muchas gracias!!😊
+
+[![caixa de fusta](/images/caixa-fusta.jpeg)](/images/caixa-fusta.jpeg)
