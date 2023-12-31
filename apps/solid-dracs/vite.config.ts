@@ -18,5 +18,8 @@ export default defineConfig({
   start: {
     ssr: false,
     extensions: ["mdx", "md"],
+    server: {
+      preset: "netlify",
+    },
   },
 });
