@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "2.0.3",
-    "@astrojs/partytown": "2.0.3",
     "@astrojs/tailwind": "5.1.0",
-    "astro": "4.0.8",
+    "astro": "4.0.9",
+    "posthog-js": "^1.96.1",
     "rosetta": "1.1.0",
     "sharp": "0.33.1",
     "tailwindcss": "3.4.0"
@@ -23,10 +23,6 @@
   "engines": {
     "node": ">=18.14.1",
     "pnpm": ">=8.0.0"
-  },
-  "volta": {
-    "node": "18.18.0",
-    "pnpm": "8.8.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.10",
